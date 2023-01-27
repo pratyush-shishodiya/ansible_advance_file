@@ -1,2 +1,9 @@
 ---
 # defaults file for role_ansible
+name: "Pratyush(all)"
+message: "Good eve!"
+package: python3
+
+ansible_user: ec2-user 
+ansible_ssh_private_key_file: /Users/pratyushshishodiya/Downloads/ars.pem 
+ansible_become: yes

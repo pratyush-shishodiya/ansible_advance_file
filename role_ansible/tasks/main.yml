@@ -1,2 +1,25 @@
 ---
-# tasks file for role_ansible
+- name: Installing packegaes through loop
+  yum: pkg={{ item }} state=installed
+  with_items:
+    - git
+    - vim
+- name: printing name and message
+  debug:
+    msg: "{{message}},I am {{name}}.I installed this package: {{package}}."
+# - name: installing package in conditioning
+  #   yum: name={{package}} state=present
+  #   when: ansible_os_family == "Darwin"
+  # - name: "installing package in conditioning"
+  #   yum: name={{package}} state=present
+  #   when: ansible_os_family == "Debian"
+  # - name: installing package in conditioning
+  #   apt: name={{package}} state=present
+  #   when: ansible_os_family == "Darwin"
+ # vars:
+ #   name: "Pratyush(playbook)"
+ #   message: "Good eve!"
+ #   package: python
+  # tasks:
+  # - name: Installing python
+  #   yum: name={{package}} state=present
