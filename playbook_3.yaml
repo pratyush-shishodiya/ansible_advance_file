@@ -1,0 +1,10 @@
+--- 
+- name: Playbook 3
+  hosts: web
+  remote_user: ec2-user
+  tasks:
+  - name: Installing python
+    yum: pkg=python3 state=installed
+    include: playbook_4.yaml
+
+  

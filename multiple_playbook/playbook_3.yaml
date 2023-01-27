@@ -1,0 +1,9 @@
+--- 
+- name: Playbook 3
+  remote_user: ec2-user
+  hosts: web
+  tasks:
+  - name: Installing python
+    yum: pkg=python3 state=installed
+
+  

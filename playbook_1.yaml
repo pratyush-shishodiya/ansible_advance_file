@@ -1,0 +1,13 @@
+---
+- name: ansible playbook
+  hosts: web
+  remote_user: ec2-user
+  tasks:
+  - name: Installing httpd
+    yum: name=httpd state=present
+  - name: create a file 
+    file: name=/opt/ansible_test.txt state=touch
+  - name: copy a file
+    copy:  dest=/home/ec2-user remote_src=/opt/ansible_test.txt
+  - name: Start service
+    service: name=httpd state=started

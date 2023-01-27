@@ -1,0 +1,20 @@
+---
+- name: ansible playbook
+  hosts: web
+  remote_user: ec2-user
+  tasks:
+  - name: download source
+    get_url:
+     url: http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+     dest: /opt/mysql/
+  - name: Install package
+    yum:
+     name: /opt/mysql/mysql-community-release-el7-5.noarch.rpm
+     state: present
+  - name: updating the server
+    yum:
+     update_only: true
+  - name: installing mysql
+    package:
+     name: mysql-server
+     state: installed

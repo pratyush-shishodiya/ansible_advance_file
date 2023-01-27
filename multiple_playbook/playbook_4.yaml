@@ -1,0 +1,9 @@
+--- 
+- name: Playbook 4
+  remote_user: ec2-user
+  hosts: web
+  tasks:
+  - name: Installing flask
+    pip: name=flask state=latest
+
+  

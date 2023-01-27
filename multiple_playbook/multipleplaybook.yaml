@@ -1,0 +1,7 @@
+---
+- name: Include a play after another play
+  #import_playbook: playbook_3.yaml
+  include: playbook_3.yaml
+#- name: Include a play after another play
+  #import_playbook: playbook_4.yaml
+  #include: playbook_4.yaml
